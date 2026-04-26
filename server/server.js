@@ -8,7 +8,7 @@ import userRouter from './routes/userRoutes.js';
 
 const app = express();
 
-await connectCloudinary()
+connectCloudinary().catch(err => console.error("Cloudinary Error:", err));
 
 app.use(cors());
 app.use(express.json());
@@ -20,8 +20,16 @@ app.use(requireAuth());
 app.use('/api/ai', aiRouter)
 app.use('/api/user', userRouter)
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log('Server is running on port', PORT);
-})
+// app.listen(PORT, () => {
+//   console.log('Server is running on port', PORT);
+// })
+
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log('Server is running on port', PORT);
+    });
+}
+export default app;
