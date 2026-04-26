@@ -5,11 +5,11 @@ import axios from "axios";
 import {v2 as cloudinary } from 'cloudinary'
 import fs from 'fs'
 import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs';
-import { GlobalCanvas, GlobalImageData, GlobalDOMMatrix } from '@napi-rs/canvas';
+import { Canvas, ImageData, DOMMatrix } from '@napi-rs/canvas';
 
-global.DOMMatrix = GlobalDOMMatrix;
-global.ImageData = GlobalImageData;
-global.Canvas = GlobalCanvas;
+global.DOMMatrix = DOMMatrix;
+global.ImageData = ImageData;
+global.Canvas = Canvas;
 
 const AI = new OpenAI({
     apiKey: process.env.GEMINI_API_KEY,
