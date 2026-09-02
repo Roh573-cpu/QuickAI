@@ -17,8 +17,8 @@
 
 Built to demonstrate real-world SaaS architecture: authentication, API-metered AI usage, file/image handling, a database-backed dashboard, and a deployed production environment — not just a CRUD demo.
 
-<!-- Add a screenshot or GIF here for maximum impact -->
-<!-- ![demo](./assets/demo.gif) -->
+<img width="800" alt="Quick.ai Landing Page" src="https://github.com/user-attachments/assets/bcd09918-30eb-4041-b27d-bd9bbec77cf6" />
+
 
 ---
 
@@ -37,11 +37,10 @@ Creators, students, and professionals waste time switching between separate tool
 - 🩹 **Object Removal** — remove unwanted objects from photos
 - 📄 **AI Resume Review** — upload a resume, get AI-driven feedback
 - 👥 **Community Feed** — share and browse AI-generated creations
-- 🔐 **Secure Authentication** — sign up/login (Clerk / JWT — *update to match your implementation*)
+- 🔐 **Secure Authentication** — sign up/login (Clerk CLI for Authentication)
 - 💳 **Freemium / Usage-based Plans** — free tier + paid upgrade path
 - 📱 **Fully Responsive UI** — works across desktop and mobile
 
-> ✏️ *Edit this list to exactly match the tools live on your deployed app — keep only what's real, remove the rest.*
 
 ---
 
@@ -51,13 +50,12 @@ Creators, students, and professionals waste time switching between separate tool
 |----------------|-----------------------------------------------|
 | Frontend       | React.js, Tailwind CSS                        |
 | Backend        | Node.js, Express.js                           |
-| Database       | MongoDB (Mongoose) / *or your actual DB*      |
-| Authentication | Clerk / JWT *(pick one)*                      |
-| AI Provider    | Google Gemini API / OpenAI *(pick one)*        |
-| Image Handling | ImageKit / Cloudinary *(pick one)*             |
+| Database       | MongoDB (Mongoose)     |
+| Authentication | Clerk CLI Authentication                    |
+| AI Provider    | Google Gemini API        |
+| Image Handling | Cloudinary |
 | Deployment     | Vercel (frontend + serverless backend)         |
 
-> ✏️ *Replace the "pick one" entries with what you actually integrated.*
 
 ---
 
@@ -103,19 +101,21 @@ npm install
 Create a `.env` file in the `server` directory:
 
 ```env
-PORT=5000
-MONGODB_URI=
-JWT_SECRET=
-AI_API_KEY=
-IMAGE_API_KEY=
-CLIENT_URL=
+DATABASE_URL=
+CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+GEMINI_API_KEY=
+CLIPDROP_API_KEY=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 ```
 
 ### Run Locally
 
 ```bash
 # In /server
-npm run dev
+npm run server
 
 # In /client
 npm run dev
@@ -163,6 +163,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 📬 Contact
 
-**Your Name** — [your-email@example.com] · [LinkedIn](#) · [Portfolio](#)
+**Rohan Dey** — [rohandeysc@gmail.com] · [www.linkedin.com/in/rohan-dey-61a020360](#) · 
 
 ⭐ If you found this project interesting, consider giving it a star!
